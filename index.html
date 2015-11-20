@@ -16,9 +16,6 @@ var background=new Image();
 background.src="http://uploadfile.1pintu.com/2012/1206/20121206101702448.jpg"
 var backgroundwin=new Image();
 backgroundwin.src="http://img1.lvyou114.com/member/2470/photo/2006-6-23-21-19-40.jpg"
-
-
-
 var Block=function(){
 	this.x=400
 	this.y=350
@@ -31,10 +28,8 @@ Block.prototype.draw=function(fillRect){
 Block.prototype.move=function(){
 	this.x-=5
 }
-
 var distanceOut=330
 var distanceIn=290
-
 var upBlock=function(){
   this.x=400
   this.y=50
@@ -47,7 +42,6 @@ upBlock.prototype.draw=function(fillRect){
 upBlock.prototype.move=function(){
   this.x-=5
 }
-
 var k=1
 var gameoverDraw=function(color){
   ctx.font = "60px Courier"
@@ -80,7 +74,6 @@ var judge=function(){
   }
   }
 }
-
 var score=0
 var drawScore=function(){
   ctx.font = "20px Courier"
@@ -94,9 +87,6 @@ var setLevel=setInterval(function(event){
   distanceIn=distanceIn-50
   if(distanceIn===40){clearInterval(setLevel)}
 },1500)
-
-
-
 var random=function(number){
   number=number+Math.floor(Math.random()*4)*3-4
   if (number>395){number=395}
@@ -109,14 +99,11 @@ var limit=function(up,down){
   var heights=[up,down]
   return heights
 }
-
-
 $("#canvas").mousemove(function(e){
   xx=e.pageX
   yy=e.pageY
   return  
 })
-
 var i=0
 var o=0
 var height=350
@@ -128,13 +115,8 @@ while (n<5){
     else{break}
   n++
 }
-
 if(win>1000){$("h1").append("You are heaven-daring.   ")}
   else if(win<50 || win===null){$("h1").append("You are as timid as a mouse.   ")}
-
-
-
-
 var intervalId=setInterval(function(){
   if(win===null || win<500){gameover()}
 	ctx.clearRect(0,0,400,400)
@@ -174,7 +156,6 @@ else if(score===750){$("h1").append("A bit fierce.   ")}
 else if(score===1000){$("h1").append("Can't be held back.   ")}
 else if(score===2000){$("h1").append("Worship big god!   ")}
 else if(score===10000){$("h1").append("You are GOD!!!   ")}
-
   ctx.strokeRect(0,0,400,400)
   if(score>=win && win>=500){
   clearInterval(intervalId)
@@ -188,8 +169,6 @@ else if(score===10000){$("h1").append("You are GOD!!!   ")}
   ctx.fillText("You Win!",200,200)
 }
 },40)
-
-
 </script>
 </body>
 </html>
